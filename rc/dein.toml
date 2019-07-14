@@ -7,7 +7,7 @@ nmap <silent> <C-w>j <Plug>(ale_next_wrap)
 nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
 
 let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier-eslint']
+let g:ale_fixers['javascript'] = ['prettier']
 
 " ファイル保存時に実行
 let g:ale_fix_on_save = 1
@@ -26,3 +26,13 @@ hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
+
+[[plugins]]
+repo  = 'prettier/vim-prettier'
+on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
+hook_source = '''
+
+  " Prettierのパースエラーをquickfixに表示しない
+  let g:prettier#quickfix_enabled = 0
+
+'''

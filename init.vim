@@ -102,5 +102,5 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " nerdtree
 autocmd VimEnter * execute 'NERDTree' 
 autocmd VimEnter * wincmd p 
-
-
+" クリップボード
+set clipboard=unnamed
