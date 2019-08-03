@@ -55,20 +55,6 @@ set showmatch
 
 set wildmenu
 
-" 保存時のみ実行する
-let g:ale_lint_on_text_changed = 0
-" 表示に関する設定
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 " カレント行ハイライト
 set cursorline
 
@@ -77,19 +63,6 @@ set mouse=a
 
 " インデント設定
 filetype plugin indent on
-
-"JSの整形
-if executable('js-beautify')
-  command! -range=% -nargs=* HTMLTidy <line1>,<line2>call RangeHtmlBeautify()
-  command! -range=% -nargs=* JSTidy <line1>,<line2>call RangeJsBeautify()
-  command! -range=% -nargs=* CSSTidy <line1>,<line2>call RangeCSSBeautify()
-  command! -range=% -nargs=* JSONTidy <line1>,<line2>call RangeJsonBeautify()
-endif
-" ale_lint
-let g:ale_lint_on_text_changed = 0
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \ }
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
@@ -104,3 +77,6 @@ autocmd VimEnter * execute 'NERDTree'
 autocmd VimEnter * wincmd p 
 " クリップボード
 set clipboard=unnamed
+
+
+
