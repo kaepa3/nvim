@@ -60,6 +60,4 @@ hook_source = '''
 '''
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-if = '''executable('node') && executable('yarn')'''
 build = './install.sh nightly'
-merged = '0'

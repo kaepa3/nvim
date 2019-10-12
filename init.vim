@@ -78,5 +78,8 @@ autocmd VimEnter * wincmd p
 " クリップボード
 set clipboard=unnamed
 
+" python see => https://qiita.com/sigwyg/items/41630f8754c2028a7a9f
+let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
+let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 
 
