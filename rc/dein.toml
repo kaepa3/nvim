@@ -61,3 +61,11 @@ hook_source = '''
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+  " 保存時に必要なimportを自動的に挿入
+  let g:go_fmt_command = "goimports"
+'''
+
