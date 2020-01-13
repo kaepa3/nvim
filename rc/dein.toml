@@ -43,13 +43,6 @@ let g:ale_javascript_prettier_use_local_config = 1
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
-
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-[[plugins]]
 repo  = 'prettier/vim-prettier'
 on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
 hook_source = '''
@@ -68,4 +61,20 @@ hook_add = '''
   " 保存時に必要なimportを自動的に挿入
   let g:go_fmt_command = "goimports"
 '''
+[[plugins]]
+repo = 'fatih/vim-go'
 
+# lsp + gopl
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+[[plugins]]
+repo = 'mattn/vim-goimports'
+# end
