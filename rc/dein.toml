@@ -55,14 +55,6 @@ hook_source = '''
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
 
-[[plugins]]
-repo = 'fatih/vim-go'
-hook_add = '''
-  " 保存時に必要なimportを自動的に挿入
-  let g:go_fmt_command = "goimports"
-'''
-[[plugins]]
-repo = 'fatih/vim-go'
 
 # lsp + gopl
 [[plugins]]
@@ -78,3 +70,7 @@ repo = 'mattn/vim-lsp-settings'
 [[plugins]]
 repo = 'mattn/vim-goimports'
 # end
+
+[[plugins]]
+repo = 'mattn/vim-lexiv'
+
