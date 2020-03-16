@@ -85,3 +85,13 @@ let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 " theme
 set list "スペースの可視化"
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:% "space 対応"
+
+" node
+let g:node_host_prog = '/usr/local/bin/neovim-node-host'
+
+" type script
+
+"lsp
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_log_file = ""
+let g:lsp_log_verbose = 0

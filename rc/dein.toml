@@ -1,56 +1,6 @@
 [[plugins]]
-repo = 'w0rp/ale'
-hook_add = '''
-
-" 表示に関する設定
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-let g:ale_statusline_format = ['E%d', 'W%d', 'OK']
-
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" flake8をLinterとして登録
-let g:ale_linters = {}
-let g:ale_linters['python'] = ['flake8']
-
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier-eslint']
-let g:ale_fixers['markdown'] = ['prettier-eslint']
-let g:ale_fixers = {
-    \ 'python': ['autopep8'],
-    \ }
-
-" 各ツールの実行オプションを変更してPythonパスを固定
-let g:ale_python_flake8_options = '-m flake8'
-let g:ale_python_autopep8_options = '-m autopep8'
-
-" ファイル保存時に実行
-let g:ale_fix_on_save = 1
-
-" ローカルの設定ファイルを考慮する
-let g:ale_javascript_prettier_use_local_config = 1
-
-'''
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
-repo  = 'prettier/vim-prettier'
-on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
-hook_source = '''
-
-  " Prettierのパースエラーをquickfixに表示しない
-  let g:prettier#quickfix_enabled = 0
-
-'''
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
@@ -74,3 +24,5 @@ repo = 'mattn/vim-goimports'
 [[plugins]]
 repo = 'mattn/vim-lexiv'
 
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
