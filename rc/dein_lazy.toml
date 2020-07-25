@@ -22,3 +22,10 @@ hook_add = '''
     let g:autopep8_on_save = 1
 '''
 
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript', 
+on_ft = ['javascript']
+
