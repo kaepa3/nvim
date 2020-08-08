@@ -1,31 +1,24 @@
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+"::dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-" 設定開始
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir    = expand('~/.config/nvim/rc')
-  let s:toml      = g:rc_dir . '/dein.toml'
-  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+" Required:
+if dein#load_state('C:\Users\yamaz\.cache\dein')
+  call dein#begin('C:\Users\yamaz\.cache\dein')
 
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  " Let dein manage dein
+  " Required:
+  call dein#add('C:\Users\yamaz\.cache\dein\repos\github.com\Shougo\dein.vim')
+
   
- " 設定終了
+  call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
+  call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
+
+  " Required:
   call dein#end()
   call dein#save_state()
 endif
@@ -34,7 +27,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-
 
 "
 set number
@@ -72,16 +64,14 @@ autocmd VimEnter * wincmd p
 set clipboard=unnamed
 
 " python see => https://qiita.com/sigwyg/items/41630f8754c2028a7a9f
-let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
+let g:python_host_prog = 'C:\Python27\python.exe'
+let g:python3_host_prog = 'C:\Users\yamaz\scoop\shims\python.exe'
 
 " theme
 set list "スペースの可視化"
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:% "space 対応"
 
 " node
-let g:node_host_prog = '/usr/local/bin/neovim-node-host'
-
 " type script
 
 "lsp

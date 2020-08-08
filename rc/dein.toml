@@ -1,19 +1,11 @@
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-
-
 # lsp + gopl
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-    let g:asyncomplete_auto_completeopt = 0
-'''
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
