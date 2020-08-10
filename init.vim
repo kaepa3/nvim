@@ -4,7 +4,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein.vim
 
 " Required:
 if dein#load_state('C:\Users\yamaz\.cache\dein')
@@ -12,7 +12,7 @@ if dein#load_state('C:\Users\yamaz\.cache\dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('C:\Users\yamaz\.cache\dein\repos\github.com\Shougo\dein.vim')
+  call dein#add('C:\Users\yamaz\.cache\dein.vim')
 
   
   call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
@@ -32,8 +32,11 @@ endif
 set number
 "
 syntax on
-" 
+"search
 set hlsearch
+set ignorecase
+set smartcase
+
 " 行末のスペースを可視化
 set listchars=tab:^\ ,trail:~
 
@@ -80,4 +83,6 @@ let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
 let lsp_signature_help_enabled = 0
 
-
+"keybind
+nmap <C-v> <C-v>
+cmap <C-v> <C-v>
