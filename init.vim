@@ -14,7 +14,6 @@ if dein#load_state('C:\Users\yamaz\.cache\dein')
   " Required:
   call dein#add('C:\Users\yamaz\.cache\dein.vim')
 
-  
   call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
   call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
 
@@ -29,7 +28,10 @@ if dein#check_install()
 endif
 
 "
+set virtualedit=block
+"
 set number
+set laststatus=2
 "
 syntax on
 "search
