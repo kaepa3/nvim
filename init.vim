@@ -7,15 +7,15 @@ endif
 set runtimepath+=~/.cache/dein.vim
 
 " Required:
-if dein#load_state('C:\Users\yamaz\.cache\dein')
-  call dein#begin('C:\Users\yamaz\.cache\dein')
+if dein#load_state('~\.cache\dein')
+  call dein#begin('~\.cache\dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('C:\Users\yamaz\.cache\dein.vim')
+  call dein#add('~\.cache\dein.vim')
 
-  call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
-  call dein#load_toml( 'C:\Users\yamaz\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
+  call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
+  call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
 
   " Required:
   call dein#end()
