@@ -1,19 +1,11 @@
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-
-
 # lsp + gopl
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-    let g:asyncomplete_auto_completeopt = 0
-'''
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
@@ -22,6 +14,8 @@ repo = 'prabirshrestha/vim-lsp'
 repo = 'mattn/vim-lsp-settings'
 [[plugins]]
 repo = 'mattn/vim-goimports'
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
 # end
 
 [[plugins]]
@@ -32,3 +26,27 @@ repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'mattn/vim-maketable'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = "skanehira/translate.vim"
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'

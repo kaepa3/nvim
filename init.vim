@@ -35,13 +35,18 @@ if dein#check_install()
   call dein#install()
 endif
 
-
+"
+set virtualedit=block
 "
 set number
+set laststatus=2
 "
 syntax on
-" 
+"search
 set hlsearch
+set ignorecase
+set smartcase
+
 " 行末のスペースを可視化
 set listchars=tab:^\ ,trail:~
 

@@ -26,6 +26,12 @@ hook_add = '''
 repo = 'tell-k/vim-autopep8'
 
 [[plugins]]
-repo = 'pangloss/vim-javascript', 
+repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+build ='''
+cd app & yarn install
+'''
