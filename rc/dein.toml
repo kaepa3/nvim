@@ -11,6 +11,9 @@ build = './install.sh nightly'
 repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+    let g:asyncomplete_auto_completeopt = 0
+'''
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
@@ -26,3 +29,6 @@ repo = 'mattn/vim-lexiv'
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'

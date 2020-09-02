@@ -88,5 +88,7 @@ let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
+let lsp_signature_help_enabled = 0
+
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
