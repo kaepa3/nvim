@@ -64,13 +64,6 @@ set mouse=a
 " インデント設定
 filetype plugin indent on
 
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-    \ }
-    
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " nerdtree
 autocmd VimEnter * execute 'NERDTree' 
@@ -95,3 +88,5 @@ let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
+
+command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
