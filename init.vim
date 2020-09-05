@@ -1,3 +1,6 @@
+"OSの種類を取得する
+let s:os_type= system('uname')
+
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
@@ -97,3 +100,9 @@ let lsp_signature_help_enabled = 0
 
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
+
+" key mapping
+if s:os_type == "Darwin\n"
+    nnoremap <C-c> !pbcopy;pbpaste
+endif
+nnoremap <C-k> :LspDocumentFormat<CR>
