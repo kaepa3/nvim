@@ -38,6 +38,9 @@ if dein#check_install()
   call dein#install()
 endif
 
+" dein auto plugin maintenance
+let g:dein#auto_recache = 1
+
 "
 set virtualedit=block
 "
@@ -88,12 +91,13 @@ set list "スペースの可視化"
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:% "space 対応"
 
 " node
-let g:node_host_prog = '/usr/local/bin/neovim-node-host'
-
+let g:node_host_prog = '~/.nodebrew/current/bin/neovim-node-host'
+" node
+let g:ruby_host_prog = '~/.rbenv/shims/neovim-ruby-host'
 " type script
 
 "lsp
-let g:lsp_diagnostics_enabled = 0
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
 let lsp_signature_help_enabled = 0

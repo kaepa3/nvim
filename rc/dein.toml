@@ -14,6 +14,7 @@ repo = 'prabirshrestha/vim-lsp'
 repo = 'mattn/vim-lsp-settings'
 [[plugins]]
 repo = 'mattn/vim-goimports'
+
 [[plugins]]
 repo = 'mattn/vim-lsp-icons'
 # end
@@ -44,9 +45,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-
-[[plugins]]
-repo = "skanehira/translate.vim"
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
