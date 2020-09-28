@@ -1,36 +1,64 @@
 "OSの種類を取得する
 let s:os_type= system('uname')
 
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+if s:os_type == "Darwin\n"
+    nnoremap <C-c> !pbcopy;pbpaste
+  " プラグインが実際にインストールされるディレクトリ
+  let s:dein_dir = expand('~/.cache/dein')
+  " dein.vim 本体
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+  " dein.vim がなければ github から落としてくる
+  if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
 
-" 設定開始
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+  " 設定開始
+  if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir    = expand('~/.config/nvim/rc')
-  let s:toml      = g:rc_dir . '/dein.toml'
-  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+    " プラグインリストを収めた TOML ファイル
+    " 予め TOML ファイル（後述）を用意しておく
+    let g:rc_dir    = expand('~/.config/nvim/rc')
+    let s:toml      = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  
- " 設定終了
-  call dein#end()
-  call dein#save_state()
+    " TOML を読み込み、キャッシュしておく
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    
+  " 設定終了
+    call dein#end()
+    call dein#save_state()
+  endif
+else
+  "::dein Scripts-----------------------------
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.cache/dein.vim
+
+  " Required:
+  if dein#load_state('~\.cache\dein')
+    call dein#begin('~\.cache\dein')
+
+    " Let dein manage dein
+    " Required:
+    call dein#add('~\.cache\dein.vim')
+
+    call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
+    call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
+
+    " Required:
+    call dein#end()
+    call dein#save_state()
+  endif
 endif
 
 " もし、未インストールものものがあったらインストール
@@ -83,18 +111,22 @@ autocmd VimEnter * wincmd p
 set clipboard=unnamed
 
 " python see => https://qiita.com/sigwyg/items/41630f8754c2028a7a9f
-let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
-
+if s:os_type == "Darwin\n"
+  let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
+  let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
+else
+  let g:python_host_prog = 'C:\Python27\python.exe'
+  let g:python3_host_prog = 'C:\Users\yamaz\scoop\shims\python.exe'
+endif 
 " theme
 set list "スペースの可視化"
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:% "space 対応"
 
 " node
-let g:node_host_prog = '~/.nodebrew/current/bin/neovim-node-host'
-" node
-let g:ruby_host_prog = '~/.rbenv/shims/neovim-ruby-host'
-" type script
+if s:os_type == "Darwin\n"
+  let g:node_host_prog = '~/.nodebrew/current/bin/neovim-node-host'
+  let g:ruby_host_prog = '~/.rbenv/shims/neovim-ruby-host'
+endif
 
 "lsp
 let g:lsp_diagnostics_enabled = 1
@@ -110,5 +142,8 @@ command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)),
 " key mapping
 if s:os_type == "Darwin\n"
     nnoremap <C-c> !pbcopy;pbpaste
+else
+  nmap <C-v> <C-v>
+  cmap <C-v> <C-v>
 endif
 nnoremap <C-k> :LspDocumentFormat<CR>
