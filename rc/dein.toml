@@ -44,3 +44,5 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
