@@ -24,9 +24,6 @@ repo = 'mattn/vim-lsp-icons'
 repo = 'mattn/vim-lexiv'
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
@@ -47,5 +44,3 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
-[[plugins]]
-repo = 'tpope/vim-fugitive'
