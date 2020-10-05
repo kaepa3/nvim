@@ -35,3 +35,6 @@ on_ft = ['markdown', 'pandoc.markdown', 'rmd']
 build ='''
 cd app & yarn install
 '''
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'

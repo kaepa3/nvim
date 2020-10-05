@@ -133,9 +133,6 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
 let lsp_signature_help_enabled = 0
-"tsx -> ts
-autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
 
