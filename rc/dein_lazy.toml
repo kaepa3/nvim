@@ -23,9 +23,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tell-k/vim-autopep8'
-
-[[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 

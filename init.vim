@@ -1,11 +1,16 @@
 "OSの種類を取得する
 let s:os_type= system('uname')
+let s:os = "mac"
+if has('win64')
+    let s:os = "win"
+elseif uname == 'Linux\n'
+    let s:os = "linux"
+endif
 
+let s:dein_dir = expand('~/.cache/dein')
 
-if s:os_type == "Darwin\n"
-    nnoremap <C-c> !pbcopy;pbpaste
+if s:os== "mac"
   " プラグインが実際にインストールされるディレクトリ
-  let s:dein_dir = expand('~/.cache/dein')
   " dein.vim 本体
   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -17,25 +22,7 @@ if s:os_type == "Darwin\n"
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
   endif
 
-  " 設定開始
-  if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-
-    " プラグインリストを収めた TOML ファイル
-    " 予め TOML ファイル（後述）を用意しておく
-    let g:rc_dir    = expand('~/.config/nvim/rc')
-    let s:toml      = g:rc_dir . '/dein.toml'
-    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-    " TOML を読み込み、キャッシュしておく
-    call dein#load_toml(s:toml,      {'lazy': 0})
-    call dein#load_toml(s:lazy_toml, {'lazy': 1})
-    
-  " 設定終了
-    call dein#end()
-    call dein#save_state()
-  endif
-else
+elseif s:os == "win"
   "::dein Scripts-----------------------------
   if &compatible
     set nocompatible               " Be iMproved
@@ -45,20 +32,32 @@ else
   set runtimepath+=~/.cache/dein.vim
 
   " Required:
-  if dein#load_state('~\.cache\dein')
-    call dein#begin('~\.cache\dein')
+endif
+
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
     " Let dein manage dein
     " Required:
     call dein#add('~\.cache\dein.vim')
 
-    call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0}) 
-    call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
+    if s:os== "mac"
+        let g:rc_dir    = expand('~/.config/nvim/rc')
+        let s:toml      = g:rc_dir . '/dein.toml'
+        let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+        " TOML を読み込み、キャッシュしておく
+        call dein#load_toml(s:toml,      {'lazy': 0})
+        call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    elseif s:os == "win"
+        call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0})
+        call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
+        call dein#load_toml( '~\AppData\Local\nvim\rc\dein_win.toml',{'lazy':0})
+    endif
 
     " Required:
     call dein#end()
     call dein#save_state()
-  endif
 endif
 
 " もし、未インストールものものがあったらインストール
