@@ -3,7 +3,7 @@ let s:os_type= system('uname')
 let s:os = "mac"
 if has('win64')
     let s:os = "win"
-elseif uname == 'Linux\n'
+elseif s:os_type == 'Linux\n'
     let s:os = "linux"
 endif
 
@@ -39,7 +39,6 @@ if dein#load_state(s:dein_dir)
 
     " Let dein manage dein
     " Required:
-    call dein#add('~\.cache\dein.vim')
 
     if s:os== "mac"
         let g:rc_dir    = expand('~/.config/nvim/rc')
@@ -50,6 +49,7 @@ if dein#load_state(s:dein_dir)
         call dein#load_toml(s:toml,      {'lazy': 0})
         call dein#load_toml(s:lazy_toml, {'lazy': 1})
     elseif s:os == "win"
+        call dein#add('~\.cache\dein.vim')
         call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0})
         call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
         call dein#load_toml( '~\AppData\Local\nvim\rc\dein_win.toml',{'lazy':0})
