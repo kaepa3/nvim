@@ -117,7 +117,7 @@ if s:os_type == "Darwin\n"
   let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 else
   let g:python_host_prog = 'C:\Python27\python.exe'
-  let g:python3_host_prog = 'C:\Users\yamaz\scoop\shims\python.exe'
+  let g:python3_host_prog = '~\scoop\shims\python.exe'
 endif 
 " theme
 set list "スペースの可視化"
