@@ -131,18 +131,26 @@ endif
 
 "lsp
 let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
 let lsp_signature_help_enabled = 0
+let g:lsp_signs_enabled = 1
+
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
 
 " key mapping
+let g:mapleader = "\<Space>"
 if s:os_type == "Darwin\n"
     nnoremap <C-c> !pbcopy;pbpaste
-else
+    nnoremap <Leader>. :new ~/.config/nvim/init.vim<CR>
+elseif s:os == "win"
   nmap <C-v> <C-v>
   cmap <C-v> <C-v>
 endif
 nnoremap <C-k> :LspDocumentFormat<CR>
+nnoremap <C-j> :LspPeekDefinition<CR>
+
+tnoremap <C-q> <C-\><C-n>
 
