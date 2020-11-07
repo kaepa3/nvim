@@ -49,3 +49,6 @@ repo = 'antoinemadec/FixCursorHold.nvim'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'kaepa3/swpclear'
