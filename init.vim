@@ -106,7 +106,7 @@ filetype plugin indent on
 
 
 " Fern 
-autocmd VimEnter * nested Fern . -drawer
+autocmd VimEnter * nested Fern . -reveal=% -drawer -stay
 
 " クリップボード
 set clipboard=unnamed
