@@ -52,9 +52,9 @@ if dein#load_state(s:dein_dir)
         call dein#load_toml(s:lazy_toml, {'lazy': 1})
     elseif s:os == "win"
         call dein#add('~\.cache\dein.vim')
+        call dein#load_toml( '~\AppData\Local\nvim\rc\dein_win.toml',{'lazy':0})
         call dein#load_toml( '~\AppData\Local\nvim\rc\dein.toml', {'lazy':0})
         call dein#load_toml( '~\AppData\Local\nvim\rc\dein_lazy.toml', {'lazy':1})
-        call dein#load_toml( '~\AppData\Local\nvim\rc\dein_win.toml',{'lazy':0})
     endif
 
     " Required:
