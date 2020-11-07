@@ -45,23 +45,19 @@ repo = 'mattn/emmet-vim'
 repo = 'antoinemadec/FixCursorHold.nvim'
 
 [[plugins]]
-# filer
 repo = 'lambdalisue/fern.vim'
 
 [[plugins]]
-# filer icons
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
-# filer icons
 repo = 'lambdalisue/nerdfont.vim'
 
 [[plugins]]
-# filer
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 hook_add='''
 let g:fern#renderer = "nerdfont"
 '''
+
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
 repo = 'kaepa3/swpclear'
