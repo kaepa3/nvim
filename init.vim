@@ -105,9 +105,9 @@ set mouse=a
 filetype plugin indent on
 
 
-" nerdtree
-autocmd VimEnter * execute 'NERDTree' 
-autocmd VimEnter * wincmd p 
+" Fern 
+autocmd VimEnter * nested Fern . -drawer
+
 " クリップボード
 set clipboard=unnamed
 
