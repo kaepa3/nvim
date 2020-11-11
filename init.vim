@@ -104,7 +104,6 @@ set mouse=a
 " インデント設定
 filetype plugin indent on
 
-
 " Fern 
 autocmd VimEnter * nested Fern . -reveal=% -drawer -stay
 
@@ -138,6 +137,12 @@ let lsp_signature_help_enabled = 0
 let g:lsp_signs_enabled = 1
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
+
+if g:os== "mac"
+    let g:sonictemplate_vim_template_dir = [
+                \ '~/.config/nvim/template'
+                \]
+endif
 
 " key mapping
 runtime scripts/keymapping.vim

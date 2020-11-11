@@ -55,9 +55,11 @@ repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 hook_add='''
 let g:fern#renderer = "nerdfont"
 '''
-
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
 repo = 'kaepa3/swpclear'
+
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
