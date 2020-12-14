@@ -39,6 +39,7 @@ let lsp_signature_help_enabled = 0
 let g:lsp_signs_enabled = 1
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
+
 " template
 if g:os== "mac"
     let g:sonictemplate_vim_template_dir = [
@@ -47,7 +48,7 @@ if g:os== "mac"
 endif
 
 " open config
-command! Config :e /Users/yamazakitakahiro/.config/nvim/init.vim
+command! Config :e ~/.config/nvim/init.vim
 " key mapping
 runtime scripts/keymapping.vim
 
