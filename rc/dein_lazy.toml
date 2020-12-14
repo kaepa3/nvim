@@ -20,6 +20,7 @@ repo = 'tell-k/vim-autopep8'
 on_ft = ['python']
 hook_add = '''
     let g:autopep8_on_save = 1
+    let g:autopep8_disable_show_diff=1
 '''
 
 [[plugins]]
@@ -35,3 +36,8 @@ cd app & yarn install
 
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+

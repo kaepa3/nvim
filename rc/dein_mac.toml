@@ -3,11 +3,15 @@ repo = 'ghifarit53/tokyonight-vim'
 hook_add = '''
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 0
-let g:lightline = {'colorscheme' : 'tokyonight'}
-let g:airline_theme = "tokyonight"
-
-colorscheme tokyonight
+let g:tokyonight_enable_italic = 1
 '''
 
+[[plugins]]
+repo = 'pineapplegiant/spaceduck'
+hook_add = '''
+set termguicolors
+let g:lightline = {'colorscheme' : 'spaceduck'}
+let g:airline_theme = 'tokyonight'
 
+colorscheme spaceduck
+'''

@@ -46,5 +46,11 @@ if g:os== "mac"
                 \]
 endif
 
+" open config
+command! Config :e /Users/yamazakitakahiro/.config/nvim/init.vim
 " key mapping
 runtime scripts/keymapping.vim
+
+"test
+nnoremap <Leader>h :noh<CR>
+
