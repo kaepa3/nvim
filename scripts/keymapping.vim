@@ -12,3 +12,4 @@ nnoremap <C-j> :LspPeekDefinition<CR>
 
 tnoremap <C-q> <C-\><C-n>
 nnoremap <Leader>j :LspDefinition<CR>
+nnoremap <Leader>h :noh<CR>

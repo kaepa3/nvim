@@ -49,9 +49,9 @@ endif
 
 " open config
 command! Config :e ~/.config/nvim/init.vim
+command! KeyMapping :e ~/.config/nvim/scripts/keymapping.vim
 " key mapping
 runtime scripts/keymapping.vim
 
 "test
-nnoremap <Leader>h :noh<CR>
 
