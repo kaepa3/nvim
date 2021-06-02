@@ -9,7 +9,9 @@ elseif g:os== "win"
 endif
 nnoremap <C-k> :LspDocumentFormat<CR>
 nnoremap <C-j> :LspPeekDefinition<CR>
-
-tnoremap <C-q> <C-\><C-n>
 nnoremap <Leader>j :LspDefinition<CR>
 nnoremap <Leader>h :noh<CR>
+nnoremap <Leader>c :LspDocumentDiagnostics<CR>
+nnoremap <Leader>r :LspRename<CR>
+
+tnoremap <C-q> <C-\><C-n>
