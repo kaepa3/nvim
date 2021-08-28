@@ -63,3 +63,21 @@ repo = 'kaepa3/swpclear'
 
 [[plugins]]
 repo = 'mattn/vim-sonictemplate'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {
+      'lua',
+      'ruby',
+      'toml',
+      'c_sharp',
+      'vue',
+    }
+  }
+}
+'''
