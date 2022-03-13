@@ -82,3 +82,8 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 '''
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'Shougo/vimproc'

@@ -1,7 +1,6 @@
 let g:os= get(g:, 'os', 'mac')
 
 let s:dein_dir = expand('~/.cache/dein')
-let s:dein_dir = expand('~/.cache/dein')
 
 if g:os== "mac"
   " プラグインが実際にインストールされるディレクトリ
@@ -41,8 +40,8 @@ if dein#load_state(s:dein_dir)
         let s:mac_toml = g:rc_dir . '/dein_mac.toml'
 
         " TOML を読み込み、キャッシュしておく
-        call dein#load_toml(s:mac_toml,  {'lazy': 0})
         call dein#load_toml(s:toml,      {'lazy': 0})
+        call dein#load_toml(s:mac_toml,  {'lazy': 0})
         call dein#load_toml(s:lazy_toml, {'lazy': 1})
     elseif g:os == "win"
         call dein#add('~\.cache\dein.vim')
