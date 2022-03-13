@@ -21,13 +21,15 @@ if g:os== "mac"
   let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 else
   let g:python_host_prog = 'C:\Python27\python.exe'
-  let g:python3_host_prog = '~\scoop\shims\python.exe'
+  let g:python3_host_prog = '~\scoop\apps\python\current\python.exe'
 endif 
 
 " node
 if g:os== "mac"
   let g:node_host_prog = '~/.nodebrew/current/bin/neovim-node-host'
   let g:ruby_host_prog = '~/.rbenv/shims/neovim-ruby-host'
+else
+  let g:ruby_host_prog = '~\scoop\apps\ruby\current\gems\bin\neovim-ruby-host'
 endif
 
 "lsp
