@@ -28,6 +28,3 @@ repo = 'peitalin/vim-jsx-typescript'
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
-[[plugins]]
-repo = 'styled-components/vim-styled-components'
-on_ft = ['typescript', 'javascript']
