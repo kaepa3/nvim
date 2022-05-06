@@ -32,13 +32,33 @@ else
   let g:ruby_host_prog = '~\scoop\apps\ruby\current\gems\bin\neovim-ruby-host'
 endif
 
-"lsp
+"{{lsp
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_log_file = ""
 let g:lsp_log_verbose = 0
 let lsp_signature_help_enabled = 0
 let g:lsp_signs_enabled = 1
+let g:lsp_settings = {
+      \ 'efm-langserver': {
+      \   'disabled': 0,
+      \   'allowlist': ['markdown'],
+      \  }
+      \ }
+function! s:on_lsp_buffer_enabled() abort
+  setlocal completeopt=menu
+  setlocal omnifunc=lsp#complete
+endfunction
+
+augroup lsp_install
+  au!
+  au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+
+"lsp}}
+
+
 
 command! ShowHighlight echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
 
