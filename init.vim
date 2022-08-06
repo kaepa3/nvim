@@ -69,9 +69,8 @@ if g:os== "mac"
                 \]
 endif
 
-" open config
-command! Config :e ~/.config/nvim/init.vim
-command! KeyMapping :e ~/.config/nvim/scripts/keymapping.vim
+" command 
+runtime scripts/extracommand.vim
 " key mapping
 runtime scripts/keymapping.vim
 

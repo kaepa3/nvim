@@ -13,5 +13,11 @@ nnoremap <Leader>j :LspDefinition<CR>
 nnoremap <Leader>h :noh<CR>
 nnoremap <Leader>c :LspDocumentDiagnostics<CR>
 nnoremap <Leader>r :LspRename<CR>
-
+" ターミナルからの脱出
 tnoremap <C-q> <C-\><C-n>
+
+" 次の行へ
+inoremap <silent> <C-n> <ESC>o
+
+" Fern 開く
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>

@@ -10,8 +10,8 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> /home/vagrant/.bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> /home/vagrant/.bash_profile
  
 #config pyenv
-pyenv install 2.7.15
-pyenv virtualenv 2.7.15 neovim2
+pyenv install 2.7.18
+pyenv virtualenv 2.7.18 neovim2
 pyenv activate neovim2
 pip2 install neovim
 pyenv which python

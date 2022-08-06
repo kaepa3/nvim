@@ -15,10 +15,13 @@ repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'iamcco/markdown-preview.nvim'
+repo = 'previm/previm'
 on_ft = ['markdown', 'pandoc.markdown', 'rmd']
-build ='''
-cd app & yarn install
+hook_add='''
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+nnoremap <Leader>p :PrevimOpen<CR>
+let g:vim_markdown_folding_disabled = 1
+let g:previm_enable_realtime = 1
 '''
 
 [[plugins]]
