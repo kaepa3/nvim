@@ -34,3 +34,7 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'heavenshell/vim-jsdoc'
 on_ft = ['typescript']
+
+[[plugins]]
+repo = 'ziglang/zig.vim'
+on_ft = ['zig']
